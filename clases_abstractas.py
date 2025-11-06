@@ -17,11 +17,22 @@ class Persona(ABC):
 
 class Estudiante(Persona):
     def __init__(self,nombre,edad,sexo,actividad):
-         super().__init__(self,nombre,edad,sexo,actividad)
+      super().__init__(nombre,edad,sexo,actividad)
 
     def hacer_actividad(self):
         print(f"Estoy estudiando: {self.actividad}")
 
-dalto = Estudiante("Bigboss",34,"Masculino","programación")
+class Trabajador(Persona):
+    def __init__ (self, nombre, edad, sexo, actividad):
+        super().__init__(nombre,edad, sexo, actividad)
+        
+    def hacer_actividad(self):
+        print(f"Actualmente estoy trabajando en el rubro de : {self.actividad}")
 
+dalto = Estudiante("Bigboss",34,"Masculino","programación")
+chanchito = Trabajador("Canchito", 45, "Masculino", "programacion")
+
+dalto.presentarse()
 dalto.hacer_actividad()
+chanchito.presentarse()
+chanchito.hacer_actividad()
